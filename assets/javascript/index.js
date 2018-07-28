@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var imageno;
+  var imageno = 0;
 
   // Initialize Firebase
   var config = {
@@ -27,9 +27,16 @@ $(document).ready(function() {
     );
     var cardBody = $("<div class='card-body'>");
     var cardTitle = $("<h5 class='card-title'>");
-    cardTitle.text('Card title');
+    cardTitle.text(obj.address + ', ' + obj.postalcode);
     var cardData = $("<p class='card-text'>");
-    cardData.text("Here's some text!");
+    cardData.html(
+      obj.price +
+        '<br>' +
+        obj.beds +
+        " <i class='fas fa-bed'></i><span>   </span>" +
+        obj.baths +
+        " <i class='fas fa-bath'></i>"
+    );
     var cardDetails = $("<a href='#' class='btn btn-primary'>");
     cardDetails.text('Details');
 
