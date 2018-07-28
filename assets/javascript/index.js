@@ -18,7 +18,7 @@ $(document).ready(function() {
       $('.loginlogout').text('Log Out');
       $('.loginlogout').attr('login-stat', 'logout');
 
-      $('.navbar').append(
+      $('.dynamicnav').prepend(
         "<button class='btn btn-outline-success my-2 my-sm-0 createlisting' type='submit'>Create New Listing</button>"
       );
     } else {
