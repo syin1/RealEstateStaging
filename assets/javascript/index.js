@@ -15,12 +15,10 @@ $(document).ready(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      console.log('Signed In!');
       $('.loginlogout').text('Log Out');
       $('.loginlogout').attr('login-stat', 'logout');
     } else {
       // No user is signed in.
-      console.log('Not Signed In!');
       $('.loginlogout').text('Log In');
       $('.loginlogout').attr('login-stat', 'login');
     }
@@ -32,17 +30,14 @@ $(document).ready(function() {
     if (status === 'login') {
       window.location.replace('login.html');
     } else if (status === 'logout') {
-      console.log('sign out action...');
       firebase
         .auth()
         .signOut()
         .then(
           function() {
-            // Sign-out successful.
-            cosole.log('sign out successful!');
+            console.log('sign out successful!');
           },
           function(error) {
-            // An error happened.
             console.log('sign out failed!');
           }
         );
