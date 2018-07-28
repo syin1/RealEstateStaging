@@ -37,8 +37,9 @@ $(document).ready(function() {
         obj.baths +
         " <i class='fas fa-bath'></i>"
     );
-    var cardDetails = $("<a href='#' class='btn btn-primary'>");
+    var cardDetails = $("<a href='#' class='btn btn-primary details'>");
     cardDetails.text('Details');
+    cardDetails.attr('data-key', snapshot.key);
 
     cardBody.append(cardTitle);
     cardBody.append(cardData);
@@ -50,46 +51,6 @@ $(document).ready(function() {
     col.append(card);
 
     $('.row').append(col);
-
-    // <div class='card' style='width: 18rem;'>
-    //   <img class='card-img-top' src='assets/images/1.jpg' height='200' width='200' alt='Card image cap'>
-    //   <div class='card-body'>
-    //     <h5 class='card-title'>Card title</h5>
-    //     <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    //     <a href='#' class='btn btn-primary'>Details</a>
-    //   </div>
-    // </div>
-
-    // var row = $("<tr id='" + snapshot.key + "'>");
-
-    // row.append($('<td>').text(obj.trainname));
-    // row.append($('<td>').text(obj.destination));
-    // row.append($('<td>').text(frequency));
-    // row.append($('<td>').text(nextArrival));
-    // row.append($('<td>').text(minutesAway));
-    // row.append(
-    //   $('<td>').html(
-    //     "<button type='button' data-key='" +
-    //       snapshot.key +
-    //       "' class='btn btn-outline-danger remove'>Remove</button><span> </span><button type='button' data-key='" +
-    //       snapshot.key +
-    //       "' class='btn btn-outline-warning update' data-toggle='modal' data-target='#exampleModal' " +
-    //       "data-name='" +
-    //       obj.trainname +
-    //       "' data-dest='" +
-    //       obj.destination +
-    //       "' data-time='" +
-    //       obj.firsttraintime +
-    //       "' data-freq='" +
-    //       obj.frequency +
-    //       "' " +
-    //       '>Update</button>'
-    //   )
-    // );
-
-    // $('#tabledisplay').append(row);
-
-    // $('#updateform').attr('data-key', snapshot.key);
   }
 
   database.ref().on(
@@ -143,5 +104,27 @@ $(document).ready(function() {
 
   $('.createlisting').on('click', function() {
     window.location.replace('addlisting.html');
+  });
+
+  $(document.body).on('click', '.details', function(event) {
+    event.preventDefault();
+    // alert($(this).attr('data-key'));
+
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+
+    if (user != null) {
+      name = user.displayName;
+      email = user.email;
+      photoUrl = user.photoURL;
+      emailVerified = user.emailVerified;
+      uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+      alert('name: ', name + '; email: ' + email);
+      window.location.replace('addlisting.html');
+    } else {
+      alert('You are not logged in!');
+    }
   });
 });
