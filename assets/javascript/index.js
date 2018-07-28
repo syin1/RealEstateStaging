@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var imageno;
+
   // Initialize Firebase
   var config = {
     apiKey: 'AIzaSyDYI4Fjm_RWQadwHH7KdTJGSErId9aUJKY',
@@ -12,14 +14,16 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
-  function renderHTML(snapshot) {
+  function renderHTML(snapshot, imageno) {
     var obj = snapshot.val();
 
     var col = $("<div class='col-md-4 onelisting'>");
     var card = $("<div class='card' style='width: 18rem;'>");
 
     var image = $(
-      "<img class='card-img-top' src='assets/images/1.jpg' height='200' width='200' alt='Card image cap'>"
+      "<img class='card-img-top' src='assets/images/" +
+        imageno +
+        ".jpg' height='200' width='200' alt='Card image cap'>"
     );
     var cardBody = $("<div class='card-body'>");
     var cardTitle = $("<h5 class='card-title'>");
@@ -84,7 +88,8 @@ $(document).ready(function() {
   database.ref().on(
     'child_added',
     function(snapshot) {
-      renderHTML(snapshot);
+      imageno++;
+      renderHTML(snapshot, imageno);
     },
     function(errorObject) {
       console.log('Error: ' + errorObject.code);
