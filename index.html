@@ -2,57 +2,42 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Real Estate App Login</title>
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/loginstyle.css">
-  <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
   <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
-  <script type="text/javascript">
-
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDYI4Fjm_RWQadwHH7KdTJGSErId9aUJKY",
-      authDomain: "real-estate-app-9e4e6.firebaseapp.com",
-      databaseURL: "https://real-estate-app-9e4e6.firebaseio.com",
-      projectId: "real-estate-app-9e4e6",
-      storageBucket: "real-estate-app-9e4e6.appspot.com",
-      messagingSenderId: "1087918608727"
-    };
-    firebase.initializeApp(config);
-
-    // FirebaseUI config.
-    var uiConfig = {
-      signInSuccessUrl: 'addlisting.html',
-      signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        firebase.auth.EmailAuthProvider.PROVIDER_ID
-      ],
-      // Terms of service url.
-      // tosUrl: '<your-tos-url>',
-      // Privacy policy url.
-      // privacyPolicyUrl: '<your-privacy-policy-url>'
-    };
-
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
-  </script>
 </head>
 
-<body class="container-fluid">
-  <div>
-    <br>
-    <h1>Real Estate App</h1>
-    <br>
-    <br>
-    <div id="firebaseui-auth-container"></div>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Search</button>
+    </form>
+
+    <button class="btn btn-outline-success my-2 my-sm-0 loginlogout" type="submit"></button>
+  </nav>
+  <div class="container">
+
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script src="assets/javascript/moment.js"></script>
+  <script src="assets/javascript/index.js"></script>
 </body>
 
 </html>
