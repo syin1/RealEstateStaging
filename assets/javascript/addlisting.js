@@ -26,10 +26,6 @@ $(document).ready(function() {
       // you have one. Use User.getToken() instead.
     }
 
-    console.log(name);
-    console.log(email);
-    console.log(uid);
-
     var address = $('#address')
       .val()
       .trim();
@@ -80,5 +76,11 @@ $(document).ready(function() {
       email: email,
       uid: uid
     });
+
+    window.location.replace('index.html');
+  });
+
+  $('#submit').on('click', function() {
+    window.location.replace('index.html');
   });
 });
