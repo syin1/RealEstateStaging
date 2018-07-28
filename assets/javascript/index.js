@@ -12,6 +12,85 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
+  function renderHTML(snapshot) {
+    var obj = snapshot.val();
+
+    var col = $("<div class='col-md-4 onelisting'>");
+    var card = $("<div class='card' style='width: 18rem;'>");
+
+    var image = $(
+      "<img class='card-img-top' src='assets/images/1.jpg' height='200' width='200' alt='Card image cap'>"
+    );
+    var cardBody = $("<div class='card-body'>");
+    var cardTitle = $("<h5 class='card-title'>");
+    cardTitle.text('Card title');
+    var cardData = $("<p class='card-text'>");
+    cardData.text("Here's some text!");
+    var cardDetails = $("<a href='#' class='btn btn-primary'>");
+    cardDetails.text('Details');
+
+    cardBody.append(cardTitle);
+    cardBody.append(cardData);
+    cardBody.append(cardDetails);
+
+    card.append(image);
+    card.append(cardBody);
+
+    col.append(card);
+
+    $('.row').append(col);
+
+    // <div class='card' style='width: 18rem;'>
+    //   <img class='card-img-top' src='assets/images/1.jpg' height='200' width='200' alt='Card image cap'>
+    //   <div class='card-body'>
+    //     <h5 class='card-title'>Card title</h5>
+    //     <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    //     <a href='#' class='btn btn-primary'>Details</a>
+    //   </div>
+    // </div>
+
+    // var row = $("<tr id='" + snapshot.key + "'>");
+
+    // row.append($('<td>').text(obj.trainname));
+    // row.append($('<td>').text(obj.destination));
+    // row.append($('<td>').text(frequency));
+    // row.append($('<td>').text(nextArrival));
+    // row.append($('<td>').text(minutesAway));
+    // row.append(
+    //   $('<td>').html(
+    //     "<button type='button' data-key='" +
+    //       snapshot.key +
+    //       "' class='btn btn-outline-danger remove'>Remove</button><span> </span><button type='button' data-key='" +
+    //       snapshot.key +
+    //       "' class='btn btn-outline-warning update' data-toggle='modal' data-target='#exampleModal' " +
+    //       "data-name='" +
+    //       obj.trainname +
+    //       "' data-dest='" +
+    //       obj.destination +
+    //       "' data-time='" +
+    //       obj.firsttraintime +
+    //       "' data-freq='" +
+    //       obj.frequency +
+    //       "' " +
+    //       '>Update</button>'
+    //   )
+    // );
+
+    // $('#tabledisplay').append(row);
+
+    // $('#updateform').attr('data-key', snapshot.key);
+  }
+
+  database.ref().on(
+    'child_added',
+    function(snapshot) {
+      renderHTML(snapshot);
+    },
+    function(errorObject) {
+      console.log('Error: ' + errorObject.code);
+    }
+  );
+
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
