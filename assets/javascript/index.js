@@ -47,4 +47,8 @@ $(document).ready(function() {
         );
     }
   });
+
+  $('.createlisting').on('click', function() {
+    window.location.replace('addlisting.html');
+  });
 });
