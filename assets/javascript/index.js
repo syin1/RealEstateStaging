@@ -32,6 +32,17 @@ $(document).ready(function() {
     if (status === 'login') {
       window.location.replace('login.html');
     } else if (status === 'logout') {
+      firebase
+        .auth()
+        .signOut()
+        .then(
+          function() {
+            // Sign-out successful.
+          },
+          function(error) {
+            // An error happened.
+          }
+        );
     }
   });
 });
