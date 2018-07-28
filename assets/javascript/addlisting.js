@@ -76,7 +76,8 @@ $(document).ready(function() {
       size: size,
       name: name,
       email: email,
-      uid: uid
+      uid: uid,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
     window.location.replace('index.html');
