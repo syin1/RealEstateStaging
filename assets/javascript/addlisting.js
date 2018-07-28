@@ -13,6 +13,23 @@ $(document).ready(function() {
   var database = firebase.database();
 
   $('#submit').on('click', function() {
+    var user = firebase.auth().currentUser;
+    var name, email, photoUrl, uid, emailVerified;
+
+    if (user != null) {
+      name = user.displayName;
+      email = user.email;
+      photoUrl = user.photoURL;
+      emailVerified = user.emailVerified;
+      uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+    }
+
+    console.log(name);
+    console.log(email);
+    console.log(uid);
+
     var address = $('#address')
       .val()
       .trim();
@@ -58,7 +75,10 @@ $(document).ready(function() {
       description: description,
       type: type,
       utilities: utilities,
-      size: size
+      size: size,
+      name: name,
+      email: email,
+      uid: uid
     });
   });
 });
