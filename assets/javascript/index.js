@@ -121,8 +121,8 @@ $(document).ready(function() {
       uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
-      alert('name: ', name + '; email: ' + email);
-      window.location.replace('addlisting.html');
+      alert('name: ' + name + '; email: ' + email);
+      window.location.replace('details.html');
     } else {
       alert('You are not logged in!');
     }
