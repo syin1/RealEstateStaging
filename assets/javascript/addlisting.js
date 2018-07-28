@@ -12,7 +12,9 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
-  $('#submit').on('click', function() {
+  $('#submit').on('click', function(event) {
+    event.preventDefault();
+
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
 
@@ -80,7 +82,8 @@ $(document).ready(function() {
     window.location.replace('index.html');
   });
 
-  $('#cancel').on('click', function() {
+  $('#cancel').on('click', function(event) {
+    event.preventDefault();
     window.location.replace('index.html');
   });
 });
