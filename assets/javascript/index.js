@@ -32,15 +32,18 @@ $(document).ready(function() {
     if (status === 'login') {
       window.location.replace('login.html');
     } else if (status === 'logout') {
+      console.log('sign out action...');
       firebase
         .auth()
         .signOut()
         .then(
           function() {
             // Sign-out successful.
+            cosole.log('sign out successful!');
           },
           function(error) {
             // An error happened.
+            console.log('sign out failed!');
           }
         );
     }
