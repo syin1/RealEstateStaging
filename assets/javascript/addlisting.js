@@ -80,7 +80,7 @@ $(document).ready(function() {
     window.location.replace('index.html');
   });
 
-  $('#submit').on('click', function() {
+  $('#cancel').on('click', function() {
     window.location.replace('index.html');
   });
 });
