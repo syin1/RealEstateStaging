@@ -18,13 +18,13 @@ $(document).ready(function() {
       $('.loginlogout').text('Log Out');
       $('.loginlogout').attr('login-stat', 'logout');
 
-      $('.dynamicnav').prepend(
-        "<button class='btn btn-outline-success my-2 my-sm-0 createlisting' type='submit'>Create New Listing</button>"
-      );
+      $('.createlisting').show();
     } else {
       // No user is signed in.
       $('.loginlogout').text('Log In');
       $('.loginlogout').attr('login-stat', 'login');
+
+      $('.createlisting').hide();
     }
   });
 
