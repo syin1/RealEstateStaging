@@ -19,6 +19,8 @@ $(document).ready(function() {
       $('.loginlogout').attr('login-stat', 'logout');
 
       $('.createlisting').show();
+
+      console.log(user);
     } else {
       // No user is signed in.
       $('.loginlogout').text('Log In');
