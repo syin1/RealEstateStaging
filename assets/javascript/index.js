@@ -40,6 +40,7 @@ $(document).ready(function() {
     var cardDetails = $("<a href='#' class='btn btn-primary details'>");
     cardDetails.text('Details');
     cardDetails.attr('data-key', snapshot.key);
+    cardDetails.attr('image-no', imageno);
 
     cardBody.append(cardTitle);
     cardBody.append(cardData);
@@ -121,8 +122,8 @@ $(document).ready(function() {
       uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
-      alert('name: ' + name + '; email: ' + email);
       window.location.replace('details.html');
+      $('#detailstest').text('adding details to details page');
     } else {
       $('#exampleModalCenter').modal('show');
     }
