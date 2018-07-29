@@ -131,17 +131,15 @@ $(document).ready(function() {
         .once('value')
         .then(function(snapshot) {
           sessionStorage.setItem('address', snapshot.val().address);
+          sessionStorage.setItem('baths', snapshot.val().baths);
+          sessionStorage.setItem('beds', snapshot.val().beds);
+          sessionStorage.setItem('description', snapshot.val().description);
+          sessionStorage.setItem('postalcode', snapshot.val().postalcode);
+          sessionStorage.setItem('price', snapshot.val().price);
+          sessionStorage.setItem('size', snapshot.val().size);
+          sessionStorage.setItem('type', snapshot.val().type);
+          sessionStorage.setItem('utilities', snapshot.val().utilities);
         });
-
-      // sessionStorage.setItem('address', child.address);
-      // sessionStorage.setItem('baths', user.baths);
-      // sessionStorage.setItem('beds', user.beds);
-      // sessionStorage.setItem('description', user.description);
-      // sessionStorage.setItem('postalcode', user.postalcode);
-      // sessionStorage.setItem('price', user.price);
-      // sessionStorage.setItem('size', user.size);
-      // sessionStorage.setItem('type', user.type);
-      // sessionStorage.setItem('utilities', user.utilities);
 
       sessionStorage.setItem('image-no', $(this).attr('image-no'));
       sessionStorage.setItem('data-key', $(this).attr('data-key'));
