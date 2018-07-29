@@ -133,7 +133,7 @@ $(document).ready(function() {
           sessionStorage.setItem('address', snapshot.val().address);
         });
 
-      sessionStorage.setItem('address', child.address);
+      // sessionStorage.setItem('address', child.address);
       // sessionStorage.setItem('baths', user.baths);
       // sessionStorage.setItem('beds', user.beds);
       // sessionStorage.setItem('description', user.description);
