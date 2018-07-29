@@ -1,15 +1,15 @@
 $(document).ready(function() {
-  // sessionStorage.getItem('address');
-  // sessionStorage.getItem('baths');
-  // sessionStorage.getItem('beds');
-  // sessionStorage.getItem('description');
-  // sessionStorage.getItem('postalcode');
-  // sessionStorage.getItem('price');
-  // sessionStorage.getItem('size');
-  // sessionStorage.getItem('type');
-  // sessionStorage.getItem('utilities');
+  var address = sessionStorage.getItem('address');
+  var baths = sessionStorage.getItem('baths');
+  var beds = sessionStorage.getItem('beds');
+  var description = sessionStorage.getItem('description');
+  var postalcode = sessionStorage.getItem('postalcode');
+  var price = sessionStorage.getItem('price');
+  var size = sessionStorage.getItem('size');
+  var type = sessionStorage.getItem('type');
+  var utilities = sessionStorage.getItem('utilities');
 
-  // sessionStorage.getItem('data-key');
+  var datakey = sessionStorage.getItem('data-key');
 
   var imageno = sessionStorage.getItem('image-no');
 
@@ -33,4 +33,7 @@ $(document).ready(function() {
       imageno +
       "/4.jpg' height='500' width='500' alt='First slide'>"
   );
+
+  $('#address').text(address);
+  $('#baths').text(baths);
 });
