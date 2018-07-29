@@ -139,6 +139,7 @@ $(document).ready(function() {
           sessionStorage.setItem('size', snapshot.val().size);
           sessionStorage.setItem('type', snapshot.val().type);
           sessionStorage.setItem('utilities', snapshot.val().utilities);
+          sessionStorage.setItem('email', snapshot.val().email);
         });
 
       sessionStorage.setItem('image-no', $(this).attr('image-no'));

@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('#edit').hide();
+  $('#delete').hide();
+
   var address = sessionStorage.getItem('address');
   var baths = sessionStorage.getItem('baths');
   var beds = sessionStorage.getItem('beds');
@@ -8,6 +11,7 @@ $(document).ready(function() {
   var size = sessionStorage.getItem('size');
   var type = sessionStorage.getItem('type');
   var utilities = sessionStorage.getItem('utilities');
+  var postEmail = sessionStorage.getItem('email');
 
   var datakey = sessionStorage.getItem('data-key');
 
@@ -36,4 +40,23 @@ $(document).ready(function() {
 
   $('#address').text(address);
   $('#baths').text(baths);
+  $('#beds').text(beds);
+  $('#description').text(description);
+  $('#postalcode').text(postalcode);
+  $('#price').text(price);
+  $('#size').text(size);
+  $('#type').text(type);
+  $('#utilities').text(utilities);
+
+  var user = firebase.auth().currentUser;
+  var loginEmail = '';
+
+  if (user != null) {
+    loginEmail = user.email;
+  }
+
+  if (loginEmail === postEmail) {
+    $('#edit').show();
+    $('#delete').show();
+  }
 });
