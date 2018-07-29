@@ -124,7 +124,11 @@ $(document).ready(function() {
       alert('name: ' + name + '; email: ' + email);
       window.location.replace('details.html');
     } else {
-      alert('You are not logged in!');
+      $('#exampleModalCenter').modal('show');
     }
+  });
+
+  $('#detaillogin').on('click', function() {
+    window.location.replace('login.html');
   });
 });
