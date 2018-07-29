@@ -125,7 +125,13 @@ $(document).ready(function() {
 
       sessionStorage.clear();
 
-      var child = database.ref().child($(this).attr('data-key'));
+      database
+        .ref()
+        .child($(this).attr('data-key'))
+        .once('value')
+        .then(function(snapshot) {
+          sessionStorage.setItem('address', snapshot.val().address);
+        });
 
       sessionStorage.setItem('address', child.address);
       // sessionStorage.setItem('baths', user.baths);
