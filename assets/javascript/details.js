@@ -29,6 +29,7 @@ $(document).ready(function() {
   var datakey = sessionStorage.getItem('data-key');
 
   var imageno = sessionStorage.getItem('image-no');
+  var loginUser = sessionStorage.getItem('loginUser');
 
   $('#detailimage1').append(
     "<img class='d-block w-100' src='assets/images/details/" +
@@ -61,19 +62,7 @@ $(document).ready(function() {
   $('#type').text(type);
   $('#utilities').text(utilities);
 
-  var user = firebase.auth().currentUser;
-  var loginEmail = '';
-
-  if (user != null) {
-    loginEmail = user.email;
-  }
-
-  console.log('user', user);
-  console.log('user.email', user.email);
-  console.log('loginEmail', loginEmail);
-  console.log('postEmail', postEmail);
-
-  if (loginEmail === postEmail) {
+  if (loginUser.email === postEmail) {
     $('#edit').show();
     $('#delete').show();
   }
