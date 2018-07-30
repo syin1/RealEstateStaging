@@ -68,6 +68,8 @@ $(document).ready(function() {
     loginEmail = user.email;
   }
 
+  console.log('user', user);
+  console.log('user.email', user.email);
   console.log('loginEmail', loginEmail);
   console.log('postEmail', postEmail);
 
