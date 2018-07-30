@@ -62,6 +62,10 @@ $(document).ready(function() {
   $('#type').text(type);
   $('#utilities').text(utilities);
 
+  console.log('loginUser', loginUser);
+  console.log('loginUser.email', loginUser.email);
+  console.log('postEmail', postEmail);
+
   if (loginUser.email === postEmail) {
     $('#edit').show();
     $('#delete').show();
