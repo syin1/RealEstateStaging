@@ -55,6 +55,9 @@ $(document).ready(function() {
     loginEmail = user.email;
   }
 
+  console.log('loginEmail', loginEmail);
+  console.log('postEmail', postEmail);
+
   if (loginEmail === postEmail) {
     $('#edit').show();
     $('#delete').show();
