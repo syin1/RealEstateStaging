@@ -29,7 +29,7 @@ $(document).ready(function() {
   var datakey = sessionStorage.getItem('data-key');
 
   var imageno = sessionStorage.getItem('image-no');
-  var loginUser = sessionStorage.getItem('loginUser');
+  var loginEmail = sessionStorage.getItem('loginEmail');
 
   $('#detailimage1').append(
     "<img class='d-block w-100' src='assets/images/details/" +
@@ -62,11 +62,10 @@ $(document).ready(function() {
   $('#type').text(type);
   $('#utilities').text(utilities);
 
-  console.log('loginUser', loginUser);
-  console.log('loginUser.email', loginUser.email);
+  console.log('loginEmail', loginEmail);
   console.log('postEmail', postEmail);
 
-  if (loginUser.email === postEmail) {
+  if (loginEmail === postEmail) {
     $('#edit').show();
     $('#delete').show();
   }

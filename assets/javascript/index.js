@@ -135,7 +135,7 @@ $(document).ready(function() {
 
       sessionStorage.setItem('image-no', $(this).attr('image-no'));
       sessionStorage.setItem('data-key', $(this).attr('data-key'));
-      sessionStorage.setItem('loginUser', user);
+      sessionStorage.setItem('loginEmail', user.email);
 
       window.location.replace('details.html');
     } else {
