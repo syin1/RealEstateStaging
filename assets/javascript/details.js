@@ -75,4 +75,15 @@ $(document).ready(function() {
     $('#edit').show();
     $('#delete').show();
   }
+
+  $(document.body).on('click', '#edit', function() {
+    window.location.replace('editlisting.html');
+  });
+
+  $(document.body).on('click', '#delete', function() {
+    database
+      .ref()
+      .child(datakey)
+      .remove();
+  });
 });
