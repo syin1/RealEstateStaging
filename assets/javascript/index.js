@@ -17,7 +17,7 @@ $(document).ready(function() {
   function renderHTML(snapshot, imageno) {
     var obj = snapshot.val();
 
-    var col = $("<div class='col-md-4 onelisting'>");
+    var col = $("<div class='col-md-4 onelisting' id='" + snapshot.key + "'>");
     var card = $("<div class='card' style='width: 18rem;'>");
 
     var image = $(
@@ -59,6 +59,16 @@ $(document).ready(function() {
     function(snapshot) {
       imageno++;
       renderHTML(snapshot, imageno);
+    },
+    function(errorObject) {
+      console.log('Error: ' + errorObject.code);
+    }
+  );
+
+  database.ref().on(
+    'child_removed',
+    function(snapshot) {
+      $('#' + snapshot.key).remove();
     },
     function(errorObject) {
       console.log('Error: ' + errorObject.code);
