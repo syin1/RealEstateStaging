@@ -79,5 +79,7 @@ $(document).ready(function() {
       .ref()
       .child(datakey)
       .remove();
+
+    window.location.href = 'index.html';
   });
 });
