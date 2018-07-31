@@ -80,11 +80,11 @@ $(document).ready(function() {
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
-    window.location.replace('index.html');
+    window.location.href = 'index.html';
   });
 
   $('#cancel').on('click', function(event) {
     event.preventDefault();
-    window.location.replace('index.html');
+    window.location.href = 'index.html';
   });
 });

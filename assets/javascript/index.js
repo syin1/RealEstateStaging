@@ -87,7 +87,7 @@ $(document).ready(function() {
     var status = $('.loginlogout').attr('login-stat');
 
     if (status === 'login') {
-      window.location.replace('login.html');
+      window.location.href = 'login.html';
     } else if (status === 'logout') {
       firebase
         .auth()
@@ -104,7 +104,7 @@ $(document).ready(function() {
   });
 
   $('.createlisting').on('click', function() {
-    window.location.replace('addlisting.html');
+    window.location.href = 'addlisting.html';
   });
 
   $(document.body).on('click', '.details', function(event) {
@@ -137,13 +137,13 @@ $(document).ready(function() {
       sessionStorage.setItem('data-key', $(this).attr('data-key'));
       sessionStorage.setItem('loginEmail', user.email);
 
-      window.location.replace('details.html');
+      window.location.href = 'details.html';
     } else {
       $('#exampleModalCenter').modal('show');
     }
   });
 
   $('#detaillogin').on('click', function() {
-    window.location.replace('login.html');
+    window.location.href = 'login.html';
   });
 });

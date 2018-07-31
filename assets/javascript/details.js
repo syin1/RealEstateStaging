@@ -71,7 +71,7 @@ $(document).ready(function() {
   }
 
   $(document.body).on('click', '#edit', function() {
-    window.location.replace('editlisting.html');
+    window.location.href = 'editlisting.html';
   });
 
   $(document.body).on('click', '#delete', function() {

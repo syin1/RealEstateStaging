@@ -104,11 +104,11 @@ $(document).ready(function() {
     sessionStorage.setItem('utilities', utilities);
     sessionStorage.setItem('email', email);
 
-    window.location.replace('details.html');
+    window.location.href = 'details.html';
   });
 
   $('#cancel').on('click', function(event) {
     event.preventDefault();
-    window.location.replace('details.html');
+    window.location.href = 'details.html';
   });
 });
