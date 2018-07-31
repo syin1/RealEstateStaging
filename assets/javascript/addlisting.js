@@ -13,7 +13,7 @@ $(document).ready(function() {
   var database = firebase.database();
 
   $('#submit').on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault(); // this step is necessary to trigger the default validation
 
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;

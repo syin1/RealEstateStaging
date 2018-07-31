@@ -23,7 +23,7 @@ $(document).ready(function() {
   $('#utilities').val(sessionStorage.getItem('utilities'));
 
   $('#submit').on('click', function(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
