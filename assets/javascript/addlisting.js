@@ -14,7 +14,7 @@ $(document).ready(function() {
 
   $('#addlistingform')
     .validator()
-    .on('submit', function(event) {
+    .on('click', '#submit', function(event) {
       // event.preventDefault(); // this step is necessary to trigger the default validation
       if (e.isDefaultPrevented()) {
         // handle the invalid form...
