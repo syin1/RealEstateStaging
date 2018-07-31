@@ -82,4 +82,8 @@ $(document).ready(function() {
 
     window.location.href = 'index.html';
   });
+
+  $(document.body).on('click', '#gotohome', function() {
+    window.location.href = 'index.html';
+  });
 });
