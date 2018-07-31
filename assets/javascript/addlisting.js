@@ -20,6 +20,8 @@ $(document).ready(function() {
       .on('submit', function(e) {
         if (e.isDefaultPrevented()) {
           // handle the invalid form...
+          console.log(e.isDefaultPrevented());
+          console.log(e);
         } else {
           var user = firebase.auth().currentUser;
           var name, email, photoUrl, uid, emailVerified;
